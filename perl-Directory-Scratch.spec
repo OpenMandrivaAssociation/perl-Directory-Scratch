@@ -7,7 +7,7 @@ Version:    %{version}
 Release:    %{release}
 License:    GPL or Artistic
 Group:      Development/Perl
-Summary:    self-cleaning scratch space for tests
+Summary:    Perl Module to generate self-cleaning scratch space for tests
 Url:        http://search.cpan.org/dist/%{module}
 Source:     http://www.cpan.org/modules/by-module/Directory/%{module}-%{version}.tar.gz
 BuildRequires: perl(Carp)
@@ -29,6 +29,7 @@ space, manipulate files inside it, then clean it up when the test exits. The
 inconvenience usually results in tests that don't work everwhere, or worse, no
 tests at all.
 
+This module aims to eliminate that problem by making it easy to do things right.
 %prep
 %setup -q -n %{module}-%{version} 
 
