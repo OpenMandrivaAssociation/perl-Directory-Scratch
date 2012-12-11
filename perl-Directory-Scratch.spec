@@ -1,27 +1,27 @@
 %define upstream_name    Directory-Scratch
 %define upstream_version 0.14
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	3
 
-Summary:    Perl Module to generate self-cleaning scratch space for tests
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/Directory/%{upstream_name}-%{upstream_version}.tar.gz
+Summary:	Perl Module to generate self-cleaning scratch space for tests
+License:	GPL+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Directory/%{upstream_name}-%{upstream_version}.tar.gz
 
-BuildRequires: perl(Carp)
-BuildRequires: perl(File::Copy)
-BuildRequires: perl(File::Path)
-BuildRequires: perl(File::Slurp)
-BuildRequires: perl(File::Spec)
-BuildRequires: perl(File::Temp)
-BuildRequires: perl(File::stat)
-BuildRequires: perl(Path::Class)
-BuildRequires: perl(Test::More)
-BuildArch: noarch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(File::Copy)
+BuildRequires:	perl(File::Path)
+BuildRequires:	perl(File::Slurp)
+BuildRequires:	perl(File::Spec)
+BuildRequires:	perl(File::Temp)
+BuildRequires:	perl(File::stat)
+BuildRequires:	perl(Path::Class)
+BuildRequires:	perl(Test::More)
+BuildArch:	noarch
 
 %description
 When writing test suites for modules that operate on files, it's often
@@ -36,21 +36,45 @@ This module aims to eliminate that problem by making it easy to do things right.
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
 make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %doc Changes README
 %{_mandir}/man3/*
-%perl_vendorlib/Directory
+%{perl_vendorlib}/Directory
+
+
+%changelog
+* Sun May 29 2011 Funda Wang <fwang@mandriva.org> 0.140.0-2mdv2011.0
++ Revision: 681425
+- mass rebuild
+
+* Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.140.0-1mdv2011.0
++ Revision: 402136
+- rebuild using %%perl_convert_version
+
+* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.14-2mdv2009.0
++ Revision: 268440
+- rebuild early 2009.0 package (before pixel changes)
+
+* Wed Jun 11 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.14-1mdv2009.0
++ Revision: 217982
+- update to new version 0.14
+
+  + Michael Scherer <misc@mandriva.org>
+    - enhance description and summary
+
+* Sat May 31 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.13-1mdv2009.0
++ Revision: 213728
+- import perl-Directory-Scratch
+
+
+* Sat May 31 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.13-1mdv2009.0
+- first mdv release
