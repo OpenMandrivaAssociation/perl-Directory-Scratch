@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	4
 
 Summary:	Perl Module to generate self-cleaning scratch space for tests
 License:	GPL+ or Artistic
@@ -30,7 +30,8 @@ space, manipulate files inside it, then clean it up when the test exits. The
 inconvenience usually results in tests that don't work everwhere, or worse, no
 tests at all.
 
-This module aims to eliminate that problem by making it easy to do things right.
+This module aims to eliminate that problem by making it easy to do things
+right.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
