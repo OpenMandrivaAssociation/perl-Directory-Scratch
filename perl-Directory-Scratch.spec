@@ -1,15 +1,15 @@
 %define upstream_name    Directory-Scratch
-%define upstream_version 0.14
+%define upstream_version 0.15
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	4
+Version:	%perl_convert_version 0.15
+Release:	1
 
 Summary:	Perl Module to generate self-cleaning scratch space for tests
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Directory/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Directory/Directory-Scratch-0.15.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Carp)
@@ -79,3 +79,4 @@ make test
 
 * Sat May 31 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.13-1mdv2009.0
 - first mdv release
+
