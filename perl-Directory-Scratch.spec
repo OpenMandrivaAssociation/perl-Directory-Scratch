@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version 0.15
-Release:	2
+Release:	3
 
 Summary:	Perl Module to generate self-cleaning scratch space for tests
 License:	GPL+ or Artistic
