@@ -8,7 +8,7 @@ Release:	3
 Summary:	Perl Module to generate self-cleaning scratch space for tests
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Directory/Directory-Scratch-0.15.tar.gz
 
 BuildRequires:	perl-devel
