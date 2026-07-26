@@ -1,14 +1,12 @@
 %define upstream_name    Directory-Scratch
-%define upstream_version 0.15
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.15
-Release:	3
+Version:	0.15
+Release:	4
 
 Summary:	Perl Module to generate self-cleaning scratch space for tests
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
+Url:		https://metacpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Directory/Directory-Scratch-0.15.tar.gz
 
 BuildRequires:	make
@@ -35,7 +33,7 @@ This module aims to eliminate that problem by making it easy to do things
 right.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -60,9 +58,7 @@ make test
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.140.0-1mdv2011.0
 + Revision: 402136
-- rebuild using %%perl_convert_version
-
-* Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.14-2mdv2009.0
+- rebuild using %0.15 Fri Aug 08 2008 Thierry Vignaud <tv@mandriva.org> 0.14-2mdv2009.0
 + Revision: 268440
 - rebuild early 2009.0 package (before pixel changes)
 
